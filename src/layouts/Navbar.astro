@@ -89,27 +89,24 @@ const navItems = [
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="hidden flex-col space-y-4 p-4 bg-white shadow-lg lg:hidden"
+    class="hidden flex-col bg-black shadow-lg lg:hidden"
   >
+    <a
+      href="tel:+1234567890"
+      class="navlink text-white hover:text-[#94762f] flex items-center px-2"
+    >
+      <Icon name="phone" size={20} />
+      <span>+1 206-741-0340</span>
+    </a>
     {
       navItems.map((item) => (
-        <a href={item.href} class="hover:text-blue-600">
+        <a
+          href={item.href}
+          class="text-white hover:text-[#94762f] block py-4 px-2 border-[#5e5e5e] border-b-[1px]"
+        >
           {item.text}
         </a>
       ))
     }
-    <hr />
-    <a
-      href="tel:+1234567890"
-      class="block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-    >
-      📞 Call
-    </a>
-    <a
-      href="mailto:info@example.com"
-      class="block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
-    >
-      ✉️ Email
-    </a>
   </div>
 </nav>
