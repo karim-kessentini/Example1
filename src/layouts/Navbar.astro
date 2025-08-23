@@ -1,0 +1,115 @@
+---
+import logo from "../assets/logos/logo.png";
+import { Icon } from "astro-icon/components";
+
+const navItems = [
+  {
+    href: "",
+    text: "Home",
+  },
+  {
+    href: "#properties",
+    text: "Properties",
+  },
+  {
+    href: "#services",
+    text: "Services",
+  },
+  {
+    href: "#about-us",
+    text: "About Us",
+  },
+  {
+    href: "#testimonials",
+    text: "Testimonials",
+  },
+];
+---
+
+<!-- Navbar -->
+<nav
+  id="navbar"
+  class="navbar fixed top-0 left-0 right-0 z-50 bg-black lg:bg-transparent h-[90px] lg:opacity-95"
+>
+  <div
+    class="max-w-5xl lg:max-w-6xl xl:max-w-7xl flex items-center justify-between h-full mx-5"
+  >
+    <!-- Left: Nav Links (hidden on mobile) -->
+    <div class="hidden lg:flex space-x-6 font-medium">
+      {
+        navItems.map((item) => (
+          <a href={item.href} class="navlink text-white hover:text-[#94762f]">
+            {item.text}
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <button
+      id="menu-toggle"
+      class="lg:hidden text-[#94792f] focus:outline-none"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-7 h-7"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- Middle: Logo -->
+    <div class="mx-auto">
+      <img src={logo.src} alt="Logo" class="h-[65px]" />
+    </div>
+
+    <!-- Right: Call to Actions -->
+    <div class="hidden lg:flex space-x-4 font-medium">
+      <a href="#" class="navlink text-white hover:text-[#94762f]">Contact</a>
+      <a href="#" class="navlink text-white hover:text-[#94762f]"
+        >Home valuation</a
+      >
+      <a
+        href="tel:+1234567890"
+        class="navlink text-white hover:text-[#94762f] flex items-center space-x-2"
+      >
+        <Icon name="phone" size={20} />
+        <span>+1 206-741-0340</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden flex-col space-y-4 p-4 bg-white shadow-lg lg:hidden"
+  >
+    {
+      navItems.map((item) => (
+        <a href={item.href} class="hover:text-blue-600">
+          {item.text}
+        </a>
+      ))
+    }
+    <hr />
+    <a
+      href="tel:+1234567890"
+      class="block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+    >
+      📞 Call
+    </a>
+    <a
+      href="mailto:info@example.com"
+      class="block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
+    >
+      ✉️ Email
+    </a>
+  </div>
+</nav>

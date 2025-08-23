@@ -1,0 +1,20 @@
+---
+import heroBg from "../../assets/images/hero-bg.webp";
+
+export interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<section
+  class={`relative min-h-[700px] bg-cover bg-center flex justify-center items-start pt-24 text-center ${className || ""}`}
+  style={`background-image: url(${heroBg.src});`}
+>
+  <div class="absolute inset-0 bg-[#0F1618] opacity-70 pointer-events-none">
+  </div>
+  <h1 class="relative text-white text-4xl md:text-6xl font-bold drop-shadow-lg">
+    Your Hero Title
+  </h1>
+</section>
