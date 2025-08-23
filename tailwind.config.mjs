@@ -17,6 +17,9 @@ export default {
       screens: {
         midmd: "880px",
       },
+      fontFamily: {
+        italiana: ["italiana", "sans-serif"],
+      },
     },
   },
   plugins: [],

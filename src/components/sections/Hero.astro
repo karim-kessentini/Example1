@@ -9,12 +9,18 @@ const { className } = Astro.props;
 ---
 
 <section
-  class={`relative min-h-[700px] bg-cover bg-center flex justify-center items-start pt-24 text-center ${className || ""}`}
-  style={`background-image: url(${heroBg.src});`}
+  class={`relative min-h-[700px] bg-cover bg-center flex justify-center items-start pt-24 text-center rounded-b-[50px] ${className || ""}`}
+  style={`background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${heroBg.src});`}
 >
-  <div class="absolute inset-0 bg-[#0F1618] opacity-70 pointer-events-none">
+  <div
+    class="absolute inset-0 pointer-events-none rounded-b-[50px] flex flex-col justify-center items-center z-30"
+  >
+  <div>
+    <h1
+      class="relative text-white text-4xl md:text-5xl font-italiana drop-shadow-lg !leading-[1.2] block z-40"
+    >
+      The Finest California <br /> Real Estate Properties
+    </h1>
+  </div>    
   </div>
-  <h1 class="relative text-white text-4xl md:text-6xl font-bold drop-shadow-lg">
-    Your Hero Title
-  </h1>
 </section>
