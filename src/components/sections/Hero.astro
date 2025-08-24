@@ -1,5 +1,6 @@
 ---
 import heroBg from "../../assets/images/hero-bg.webp";
+import SearchBar from "../_/SearchBar.astro";
 
 export interface Props {
   className?: string;
@@ -9,18 +10,20 @@ const { className } = Astro.props;
 ---
 
 <section
+  id="home"
   class={`relative min-h-[700px] bg-cover bg-center flex justify-center items-start pt-24 text-center rounded-b-[50px] ${className || ""}`}
   style={`background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${heroBg.src});`}
 >
   <div
-    class="absolute inset-0 pointer-events-none rounded-b-[50px] flex flex-col justify-center items-center z-30"
+    class="absolute inset-0 rounded-b-[50px] flex flex-col justify-center items-center gap-10"
   >
-  <div>
-    <h1
-      class="relative text-white text-4xl md:text-5xl font-italiana drop-shadow-lg !leading-[1.2] block z-40"
-    >
-      The Finest California <br /> Real Estate Properties
-    </h1>
-  </div>    
+    <div>
+      <h1
+        class="relative text-white text-4xl md:text-5xl font-italiana drop-shadow-lg !leading-[1.2] block"
+      >
+        The Finest California <br /> Real Estate Properties
+      </h1>
+    </div>
+    <SearchBar />
   </div>
 </section>

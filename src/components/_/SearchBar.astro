@@ -1,0 +1,60 @@
+---
+const propertyTypes = ["House", "Apartment", "Condo", "Townhouse"];
+const buyRentOptions = ["Buy", "Rent"];
+---
+
+<style>
+    .placeholder-dark::placeholder {
+        color: #484848;
+        opacity: 1;
+        font-size: 14px;
+    }
+    select,
+    option {
+        color: #484848;
+        font-size: 14px;
+    }
+</style>
+
+<form
+    name="search-bar"
+    class="bg-white rounded-[50px] shadow-md flex items-center w-full lg:max-w-4xl mx-auto h-[50px]"
+>
+    <!-- 1. Type (Text Input) -->
+    <input
+        name="loaction"
+        type="text"
+        placeholder="Search by location"
+        class="flex-1 px-3 py-2 rounded-l-[50px] border h-full focus:outline-none placeholder-dark"
+    />
+
+    <!-- 2. Property Type Dropdown -->
+    <select
+        name="property-type"
+        class="px-3 py-2 border-l border-gray-300 h-full w-full lg:max-w-[200px] cursor-pointer focus:outline-none"
+    >
+        <option value="">Property Type</option>
+        {propertyTypes.map((type) => <option value={type}>{type}</option>)}
+    </select>
+
+    <!-- 3. Buy or Rent Dropdown -->
+    <select
+        name="buy-rent"
+        class="px-3 py-2 border-l border-gray-300 h-full w-full lg:max-w-[200px] cursor-pointer focus:outline-none"
+    >
+        <option value="">Buy or Rent</option>
+        {
+            buyRentOptions.map((option) => (
+                <option value={option}>{option}</option>
+            ))
+        }
+    </select>
+
+    <!-- 4. Search Button -->
+    <button
+        type="submit"
+        class="px-5 py-2 bg-[#94792f] text-white font-semibold transition-colors rounded-r-[50px] h-full w-full lg:max-w-[200px]"
+    >
+        Search
+    </button>
+</form>
