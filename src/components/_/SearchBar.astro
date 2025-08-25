@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 const propertyTypes = ["House", "Apartment", "Condo", "Townhouse"];
 const buyRentOptions = ["Buy", "Rent"];
 ---
@@ -18,20 +19,20 @@ const buyRentOptions = ["Buy", "Rent"];
 
 <form
     name="search-bar"
-    class="bg-white rounded-[50px] shadow-md flex items-center w-full lg:max-w-4xl mx-auto h-[50px]"
+    class="bg-white rounded lg:rounded-[50px] shadow-md flex flex-col lg:flex-row items-center w-full lg:max-w-4xl mx-auto h-auto lg:h-[50px] p-3 gap-2 lg:gap-0 lg:p-0"
 >
     <!-- 1. Type (Text Input) -->
     <input
         name="loaction"
         type="text"
         placeholder="Search by location"
-        class="flex-1 px-3 py-2 rounded-l-[50px] border h-full focus:outline-none placeholder-dark"
+        class="flex-1 px-3 py-2 lg:rounded-l-[50px] lg:border h-full focus:outline-none placeholder-dark w-full lg:w-auto"
     />
 
     <!-- 2. Property Type Dropdown -->
     <select
         name="property-type"
-        class="px-3 py-2 border-l border-gray-300 h-full w-full lg:max-w-[200px] cursor-pointer focus:outline-none"
+        class="px-3 py-2 lg:border-l lg:border-gray-300 h-full w-full lg:max-w-[200px] cursor-pointer focus:outline-none"
     >
         <option value="">Property Type</option>
         {propertyTypes.map((type) => <option value={type}>{type}</option>)}
@@ -40,7 +41,7 @@ const buyRentOptions = ["Buy", "Rent"];
     <!-- 3. Buy or Rent Dropdown -->
     <select
         name="buy-rent"
-        class="px-3 py-2 border-l border-gray-300 h-full w-full lg:max-w-[200px] cursor-pointer focus:outline-none"
+        class="px-3 py-2 lg:border-l lg:border-gray-300 h-full w-full lg:max-w-[200px] cursor-pointer focus:outline-none"
     >
         <option value="">Buy or Rent</option>
         {
@@ -53,8 +54,9 @@ const buyRentOptions = ["Buy", "Rent"];
     <!-- 4. Search Button -->
     <button
         type="submit"
-        class="px-5 py-2 bg-[#94792f] text-white font-semibold transition-colors rounded-r-[50px] h-full w-full lg:max-w-[200px]"
+        class="px-5 py-2 bg-[#94792f] text-white font-semibold transition-colors rounded-md lg:rounded-none lg:rounded-r-[50px] h-full w-full lg:max-w-[200px] flex items-center justify-center hover:bg-[#6D5D28]"
     >
+        <Icon name="search" size={22} />
         Search
     </button>
 </form>
