@@ -1,6 +1,63 @@
 import property1img1 from "../assets/images/properties/1/img1.webp";
 import property1img2 from "../assets/images/properties/1/img2.webp";
 import property1img3 from "../assets/images/properties/1/img3.webp";
+import property2img1 from "../assets/images/properties/2/img1.webp";
+import property2img2 from "../assets/images/properties/2/img2.webp";
+import property2img3 from "../assets/images/properties/2/img3.webp";
+import property3img1 from "../assets/images/properties/3/img1.avif";
+import property3img2 from "../assets/images/properties/3/img2.jfif";
+import property3img3 from "../assets/images/properties/3/img3.jfif";
+import property4img1 from "../assets/images/properties/4/img1.webp";
+import property4img2 from "../assets/images/properties/4/img2.webp";
+import property4img3 from "../assets/images/properties/4/img3.webp";
+import property5img1 from "../assets/images/properties/5/img1.avif";
+import property5img2 from "../assets/images/properties/5/img2.jpg";
+import property5img3 from "../assets/images/properties/5/img3.avif";
+import property6img1 from "../assets/images/properties/6/img1.jpg";
+import property6img2 from "../assets/images/properties/6/img2.jpg";
+import property6img3 from "../assets/images/properties/6/img3.jpg";
+import property7img1 from "../assets/images/properties/7/img1.webp";
+import property7img2 from "../assets/images/properties/7/img2.webp";
+import property7img3 from "../assets/images/properties/7/img3.webp";
+import property8img1 from "../assets/images/properties/8/img1.webp";
+import property8img2 from "../assets/images/properties/8/img2.webp";
+import property8img3 from "../assets/images/properties/8/img3.webp";
+import property9img1 from "../assets/images/properties/9/img1.webp";
+import property9img2 from "../assets/images/properties/9/img2.webp";
+import property9img3 from "../assets/images/properties/9/img3.webp";
+import property10img1 from "../assets/images/properties/10/img1.jpg";
+import property10img2 from "../assets/images/properties/10/img2.jpg";
+import property10img3 from "../assets/images/properties/10/img3.jpg";
+import property11img1 from "../assets/images/properties/11/img1.webp";
+import property11img2 from "../assets/images/properties/11/img2.webp";
+import property11img3 from "../assets/images/properties/11/img3.webp";
+import property12img1 from "../assets/images/properties/12/img1.webp";
+import property12img2 from "../assets/images/properties/12/img2.webp";
+import property12img3 from "../assets/images/properties/12/img3.webp";
+import property13img1 from "../assets/images/properties/13/img1.jpg";
+import property13img2 from "../assets/images/properties/13/img2.jpg";
+import property13img3 from "../assets/images/properties/13/img3.jpg";
+import property14img1 from "../assets/images/properties/14/img1.webp";
+import property14img2 from "../assets/images/properties/14/img2.webp";
+import property14img3 from "../assets/images/properties/14/img3.webp";
+import property15img1 from "../assets/images/properties/15/img1.webp";
+import property15img2 from "../assets/images/properties/15/img2.webp";
+import property15img3 from "../assets/images/properties/15/img3.webp";
+import property16img1 from "../assets/images/properties/16/img1.webp";
+import property16img2 from "../assets/images/properties/16/img2.webp";
+import property16img3 from "../assets/images/properties/16/img3.webp";
+import property17img1 from "../assets/images/properties/17/img1.webp";
+import property17img2 from "../assets/images/properties/17/img2.webp";
+import property17img3 from "../assets/images/properties/17/img3.webp";
+import property18img1 from "../assets/images/properties/18/img1.webp";
+import property18img2 from "../assets/images/properties/18/img2.webp";
+import property18img3 from "../assets/images/properties/18/img3.webp";
+import property19img1 from "../assets/images/properties/19/img1.webp";
+import property19img2 from "../assets/images/properties/19/img2.webp";
+import property19img3 from "../assets/images/properties/19/img3.webp";
+import property20img1 from "../assets/images/properties/20/img1.jpg";
+import property20img2 from "../assets/images/properties/20/img2.jpeg";
+import property20img3 from "../assets/images/properties/20/img3.avif";
 
 export const properties = [
   {
@@ -15,9 +72,9 @@ export const properties = [
     category: "house",
     address: "123 Beverly Hills Dr, Los Angeles, CA 90210",
     photos: [
-        property1img1,
-        property1img2,
-        property1img3
+      property1img1,
+      property1img2,
+      property1img3
     ],
   },
   {
@@ -32,9 +89,9 @@ export const properties = [
     category: "apartment",
     address: "101 Market St, San Francisco, CA 94105",
     photos: [
-      "/images/properties/apt1_1.jpg",
-      "/images/properties/apt1_2.jpg",
-      "/images/properties/apt1_3.jpg"
+      property2img1,
+      property2img2,
+      property2img3
     ],
   },
   {
@@ -49,9 +106,9 @@ export const properties = [
     category: "townHouse",
     address: "220 Ocean Ave, Santa Monica, CA 90401",
     photos: [
-      "/images/properties/townhouse1_1.jpg",
-      "/images/properties/townhouse1_2.jpg",
-      "/images/properties/townhouse1_3.jpg"
+      property3img1,
+      property3img2,
+      property3img3
     ],
   },
   {
@@ -66,9 +123,9 @@ export const properties = [
     category: "condo",
     address: "789 Lakeshore Blvd, South Lake Tahoe, CA 96150",
     photos: [
-      "/images/properties/condo1_1.jpg",
-      "/images/properties/condo1_2.jpg",
-      "/images/properties/condo1_3.jpg"
+      property4img1,
+      property4img2,
+      property4img3
     ],
   },
   {
@@ -83,9 +140,9 @@ export const properties = [
     category: "apartment",
     address: "55 6th St, San Jose, CA 95112",
     photos: [
-      "/images/properties/apt2_1.jpg",
-      "/images/properties/apt2_2.jpg",
-      "/images/properties/apt2_3.jpg"
+      property5img1,
+      property5img2,
+      property5img3
     ],
   },
   {
@@ -100,9 +157,9 @@ export const properties = [
     category: "condo",
     address: "333 Broadway, Oakland, CA 94607",
     photos: [
-      "/images/properties/loft1_1.jpg",
-      "/images/properties/loft1_2.jpg",
-      "/images/properties/loft1_3.jpg"
+      property6img1,
+      property6img2,
+      property6img3
     ],
   },
   {
@@ -117,9 +174,9 @@ export const properties = [
     category: "house",
     address: "456 Maple St, Sacramento, CA 95814",
     photos: [
-      "/images/properties/house1_1.jpg",
-      "/images/properties/house1_2.jpg",
-      "/images/properties/house1_3.jpg"
+      property7img1,
+      property7img2,
+      property7img3
     ],
   },
   {
@@ -134,9 +191,9 @@ export const properties = [
     category: "house",
     address: "789 Sunset Blvd, Beverly Hills, CA 90212",
     photos: [
-      "/images/properties/mansion1_1.jpg",
-      "/images/properties/mansion1_2.jpg",
-      "/images/properties/mansion1_3.jpg"
+      property8img1,
+      property8img2,
+      property8img3
     ],
   },
   {
@@ -151,9 +208,9 @@ export const properties = [
     category: "townHouse",
     address: "100 Ocean Blvd, Huntington Beach, CA 92648",
     photos: [
-      "/images/properties/townhouse2_1.jpg",
-      "/images/properties/townhouse2_2.jpg",
-      "/images/properties/townhouse2_3.jpg"
+      property9img1,
+      property9img2,
+      property9img3
     ],
   },
   {
@@ -168,9 +225,9 @@ export const properties = [
     category: "apartment",
     address: "250 College Ave, Berkeley, CA 94704",
     photos: [
-      "/images/properties/apt3_1.jpg",
-      "/images/properties/apt3_2.jpg",
-      "/images/properties/apt3_3.jpg"
+      property10img1,
+      property10img2,
+      property10img3
     ],
   },
   {
@@ -185,9 +242,9 @@ export const properties = [
     category: "condo",
     address: "500 Mission St, San Francisco, CA 94105",
     photos: [
-      "/images/properties/condo2_1.jpg",
-      "/images/properties/condo2_2.jpg",
-      "/images/properties/condo2_3.jpg"
+      property11img1,
+      property11img2,
+      property11img3
     ],
   },
   {
@@ -202,9 +259,9 @@ export const properties = [
     category: "house",
     address: "22 Valley Rd, Fresno, CA 93721",
     photos: [
-      "/images/properties/house2_1.jpg",
-      "/images/properties/house2_2.jpg",
-      "/images/properties/house2_3.jpg"
+      property12img1,
+      property12img2,
+      property12img3
     ],
   },
   {
@@ -219,9 +276,9 @@ export const properties = [
     category: "house",
     address: "2300 Laurel Canyon Blvd, Los Angeles, CA 90046",
     photos: [
-      "/images/properties/house3_1.jpg",
-      "/images/properties/house3_2.jpg",
-      "/images/properties/house3_3.jpg"
+      property13img1,
+      property13img2,
+      property13img3
     ],
   },
   {
@@ -236,9 +293,9 @@ export const properties = [
     category: "condo",
     address: "900 S Figueroa St, Los Angeles, CA 90015",
     photos: [
-      "/images/properties/condo3_1.jpg",
-      "/images/properties/condo3_2.jpg",
-      "/images/properties/condo3_3.jpg"
+      property14img1,
+      property14img2,
+      property14img3
     ],
   },
   {
@@ -253,9 +310,9 @@ export const properties = [
     category: "house",
     address: "1444 N Palm Canyon Dr, Palm Springs, CA 92262",
     photos: [
-      "/images/properties/villa2_1.jpg",
-      "/images/properties/villa2_2.jpg",
-      "/images/properties/villa2_3.jpg"
+      property15img1,
+      property15img2,
+      property15img3
     ],
   },
   {
@@ -270,9 +327,9 @@ export const properties = [
     category: "apartment",
     address: "500 Pacific Ave, San Diego, CA 92101",
     photos: [
-      "/images/properties/apt4_1.jpg",
-      "/images/properties/apt4_2.jpg",
-      "/images/properties/apt4_3.jpg"
+      property16img1,
+      property16img2,
+      property16img3
     ],
   },
   {
@@ -287,9 +344,9 @@ export const properties = [
     category: "townHouse",
     address: "120 Greenway Dr, Irvine, CA 92614",
     photos: [
-      "/images/properties/townhouse3_1.jpg",
-      "/images/properties/townhouse3_2.jpg",
-      "/images/properties/townhouse3_3.jpg"
+      property17img1,
+      property17img2,
+      property17img3
     ],
   },
   {
@@ -304,9 +361,9 @@ export const properties = [
     category: "house",
     address: "333 Rose St, Pasadena, CA 91103",
     photos: [
-      "/images/properties/house4_1.jpg",
-      "/images/properties/house4_2.jpg",
-      "/images/properties/house4_3.jpg"
+      property18img1,
+      property18img2,
+      property18img3
     ],
   },
   {
@@ -321,9 +378,9 @@ export const properties = [
     category: "condo",
     address: "700 Flower St, Los Angeles, CA 90017",
     photos: [
-      "/images/properties/loft2_1.jpg",
-      "/images/properties/loft2_2.jpg",
-      "/images/properties/loft2_3.jpg"
+      property19img1,
+      property19img2,
+      property19img3
     ],
   },
   {
@@ -338,94 +395,9 @@ export const properties = [
     category: "house",
     address: "12 Marina Dr, Lake Arrowhead, CA 92352",
     photos: [
-      "/images/properties/house5_1.jpg",
-      "/images/properties/house5_2.jpg",
-      "/images/properties/house5_3.jpg"
-    ],
-  },
-  {
-    id: 21,
-    status: "For Rent",
-    sold: false,
-    price: "$2,100 / month",
-    name: "Downtown Sacramento Apartment",
-    bedrooms: 1,
-    bathrooms: 1,
-    size: "700 ft²",
-    category: "apartment",
-    address: "201 J St, Sacramento, CA 95814",
-    photos: [
-      "/images/properties/apt5_1.jpg",
-      "/images/properties/apt5_2.jpg",
-      "/images/properties/apt5_3.jpg"
-    ],
-  },
-  {
-    id: 22,
-    status: "For Sale",
-    sold: false,
-    price: "$1,450,000",
-    name: "Luxury Condo",
-    bedrooms: 2,
-    bathrooms: 2,
-    size: "1,350 ft²",
-    category: "condo",
-    address: "1 Embarcadero Center, San Francisco, CA 94111",
-    photos: [
-      "/images/properties/condo4_1.jpg",
-      "/images/properties/condo4_2.jpg",
-      "/images/properties/condo4_3.jpg"
-    ],
-  },
-  {
-    id: 23,
-    status: "For Sale",
-    sold: false,
-    price: "$2,350,000",
-    name: "Beach Bungalow",
-    bedrooms: 3,
-    bathrooms: 2,
-    size: "1,900 ft²",
-    category: "house",
-    address: "88 Pier Ave, Hermosa Beach, CA 90254",
-    photos: [
-      "/images/properties/house6_1.jpg",
-      "/images/properties/house6_2.jpg",
-      "/images/properties/house6_3.jpg"
-    ],
-  },
-  {
-    id: 24,
-    status: "For Sale",
-    sold: false,
-    price: "$925,000",
-    name: "Modern Townhouse",
-    bedrooms: 3,
-    bathrooms: 2,
-    size: "1,850 ft²",
-    category: "townHouse",
-    address: "155 Orange Grove Ave, Glendale, CA 91205",
-    photos: [
-      "/images/properties/townhouse4_1.jpg",
-      "/images/properties/townhouse4_2.jpg",
-      "/images/properties/townhouse4_3.jpg"
-    ],
-  },
-  {
-    id: 25,
-    status: "For Rent",
-    sold: false,
-    price: "$1,750 / month",
-    name: "Starter Apartment",
-    bedrooms: 1,
-    bathrooms: 1,
-    size: "550 ft²",
-    category: "apartment",
-    address: "60 E Santa Clara St, San Jose, CA 95113",
-    photos: [
-      "/images/properties/apt6_1.jpg",
-      "/images/properties/apt6_2.jpg",
-      "/images/properties/apt6_3.jpg"
+      property20img1,
+      property20img2,
+      property20img3
     ],
   },
 ];
