@@ -19,6 +19,7 @@ export default {
       },
       fontFamily: {
         italiana: ["italiana", "sans-serif"],
+        roboto: ["roboto", "sans-serif"],
       },
     },
   },

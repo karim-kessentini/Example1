@@ -1,0 +1,41 @@
+---
+import servicesBg from "../../assets/images/services-bg.webp";
+import { Icon } from "astro-icon/components";
+import ServiceCard from "../cards/serviceCard.astro";
+import { services } from "../../data/services";
+
+export interface Props {
+    className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<section
+    id="services"
+    class={`relative min-h-[700px] h-fit bg-cover bg-center flex justify-center items-center py-24 text-center ${className || ""}`}
+    style={`background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${servicesBg.src});`}
+>
+    <div
+        class="inset-0 rounded-b-[50px] flex flex-col justify-center items-center gap-10 px-5"
+    >
+        <div>
+            <h1
+                class="relative text-white text-4xl md:text-5xl font-italiana drop-shadow-lg !leading-[1.2] block"
+            >
+                Passionate about <br /> Being Different
+            </h1>
+        </div>
+        <div class="flex gap-4 flex-wrap justify-center items-center">
+            {
+                services.map((service) => (
+                    <ServiceCard
+                        icon={service.icon}
+                        title={service.title}
+                        description={service.description}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+const {
+    icon,
+    title,
+    description,
+    background = "#FFFFFFF2",
+    iconBackground = "#94792f",
+    iconColor = "#FFFFFFF2",
+    iconSize = "30",
+    className = "",
+} = Astro.props;
+---
+
+<div
+    class=`bg-[${background}] backdrop-blur-md rounded-lg p-4 text-left drop-shadow-lg flex flex-col items-center min-w-60 max-w-sm w-full ${className}`
+>
+    <div
+        class=`flex items-center justify-center w-12 h-12 rounded-full bg-[${iconBackground}]`
+    >
+        <Icon name=`${icon}` size={iconSize} color={iconColor} />
+    </div>
+    <h2 class="text-[#1b3942] text-xl font-medium font-roboto my-4">
+        {title}
+    </h2>
+    <p class="text-[#1B3942C4] text-center">
+        {description}
+    </p>
+</div>
