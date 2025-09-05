@@ -1,0 +1,14 @@
+---
+import { staff } from "../../data/staff";
+import AgentCard from "../cards/agentCard.astro";
+---
+ <section
+      id="about-us"
+      class="min-h-[700px] h-fit flex justify-center items-center flex-wrap gap-8 lg:px-7 py-7"
+    >
+      {
+        staff.map((agent) => (
+          <AgentCard name={agent.name} role={agent.role} photo={agent.photo} />
+        ))
+      }
+    </section>

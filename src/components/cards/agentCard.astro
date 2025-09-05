@@ -1,0 +1,17 @@
+---
+const { name, role, photo, className = "" } = Astro.props;
+---
+
+<div
+    class=`backdrop-blur-md rounded-lg p-4 text-left bg-center bg-cover drop-shadow-lg flex flex-col items-start justify-end min-w-52  max-w-[280px] w-full min-h-[450px] h-full ${className}`
+    style={`background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${photo.src});`}
+>
+    <div>
+        <h2 class="text-white text-xl font-medium font-roboto m-0">
+            {name}
+        </h2>
+        <p class="text-white">
+            {role}
+        </p>
+    </div>
+</div>

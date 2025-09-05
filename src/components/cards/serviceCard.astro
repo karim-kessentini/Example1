@@ -13,12 +13,14 @@ const {
 ---
 
 <div
-    class=`bg-[${background}] backdrop-blur-md rounded-lg p-4 text-left drop-shadow-lg flex flex-col items-center min-w-60 max-w-sm w-full ${className}`
+    class={`rounded-lg p-4 text-left drop-shadow-lg flex flex-col items-center min-w-60 max-w-sm w-full ${className}`}
+    style={`background: ${background};`}
 >
     <div
-        class=`flex items-center justify-center w-12 h-12 rounded-full bg-[${iconBackground}]`
+        class="flex items-center justify-center w-12 h-12 rounded-full"
+        style={`background: ${iconBackground};`}
     >
-        <Icon name=`${icon}` size={iconSize} color={iconColor} />
+        <Icon name={`${icon}`} size={iconSize} color={iconColor} />
     </div>
     <h2 class="text-[#1b3942] text-xl font-medium font-roboto my-4">
         {title}
