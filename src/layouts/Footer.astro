@@ -1,5 +1,6 @@
 ---
 import logo from "../assets/logos/logo.png";
+import { Icon } from "astro-icon/components";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -71,10 +72,55 @@ const currentYear = new Date().getFullYear();
 
     <!-- Bottom bar -->
     <div
-      class="border-t border-gray-300 mt-10 pt-6 text-center text-sm text-gray-500"
+      class="border-t border-gray-300 mt-10 pt-6 text-center text-sm text-gray-500 flex justify-between items-center flex-col md:flex-row md:gap-0 gap-4" 
     >
-      © {currentYear} California Residence · Website by
-      <a href="https://youragency.com" class="hover:underline">EasyListings</a>
+      <div>
+        © {currentYear} California Residence · Website by
+        <a href="https://youragency.com" class="hover:underline">EasyListings</a
+        >
+      </div>
+      <div class="flex gap-3">
+        <a
+          href="#facebook"
+          class="group rounded-full border border-black flex justify-center items-center p-1 hover:border-[#94792f] transition-colors duration-200 w-8 h-8"
+        >
+          <Icon
+            name="facebook"
+            size={18}
+            class="text-black transition-colors duration-200 group-hover:text-[#94792f]"
+          />
+        </a>
+        <a
+          href="#x"
+          class="group rounded-full border border-black flex justify-center items-center p-1 hover:border-[#94792f] transition-colors duration-200 w-8 h-8"
+        >
+          <Icon
+            name="x"
+            size={18}
+            class="text-black transition-colors duration-200 group-hover:text-[#94792f]"
+          />
+        </a>
+        <a
+          href="#instagram"
+          class="group rounded-full border border-black flex justify-center items-center p-1 hover:border-[#94792f] transition-colors duration-200 w-8 h-8"
+        >
+          <Icon
+            name="instagram"
+            size={18}
+            class="text-black transition-colors duration-200 group-hover:text-[#94792f]"
+          />
+        </a>
+        <a
+          href="#linkedin"
+          class="group rounded-full border border-black flex justify-center items-center p-1 hover:border-[#94792f] transition-colors duration-200 w-8 h-8"
+        >
+          <Icon
+            name="linkedin"
+            size={18}
+            class="text-black transition-colors duration-200 group-hover:text-[#94792f]"
+          />
+        </a>
+      </div>
     </div>
   </div>
 </footer>
