@@ -1,56 +1,69 @@
 ---
+import logo from "../assets/logos/logo.png";
 
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-white text-black py-10">
+<footer class="bg-white text-black py-10 font-roboto">
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Column 1 -->
       <div>
-        <h3 class="text-lg font-semibold mb-4 text-[#1B3942]">Company</h3>
-        <ul class="space-y-2">
-          <li><a href="#" class="hover:underline">About Us</a></li>
-          <li><a href="#" class="hover:underline">Careers</a></li>
-          <li><a href="#" class="hover:underline">Press</a></li>
-        </ul>
+        <h3 class="text-lg font-semibold mb-4 text-[#1B3942] font-italiana">
+          California Residence
+        </h3>
+        <div class="mx-auto">
+          <img src={logo.src} alt="Logo" class="h-[65px]" />
+        </div>
       </div>
 
       <!-- Column 2 -->
       <div>
-        <h3 class="text-lg font-semibold mb-4 text-[#1B3942]">Services</h3>
+        <h3 class="text-lg font-semibold mb-4 text-[#1B3942] font-italiana">
+          Visit Us
+        </h3>
         <ul class="space-y-2">
-          <li><a href="#" class="hover:underline">Buy a Home</a></li>
-          <li><a href="#" class="hover:underline">Sell a Home</a></li>
-          <li><a href="#" class="hover:underline">Rent a Home</a></li>
+          <li>
+            <a href="#" class="hover:underline"
+              >1234 Sunset Blvd, Los Angeles, CA 90026, United States</a
+            >
+          </li>
+          <li>
+            <a href="tel:+12067410340" class="hover:underline"
+              >+1 206-741-0340</a
+            >
+          </li>
         </ul>
       </div>
 
       <!-- Column 3 -->
       <div>
-        <h3 class="text-lg font-semibold mb-4 text-[#1B3942]">Resources</h3>
+        <h3 class="text-lg font-semibold mb-4 text-[#1B3942] font-italiana">
+          Working Hours
+        </h3>
         <ul class="space-y-2">
-          <li><a href="#" class="hover:underline">Blog</a></li>
-          <li><a href="#" class="hover:underline">FAQ</a></li>
-          <li><a href="#" class="hover:underline">Support</a></li>
+          <li><a href="#" class="hover:underline">Monday – Friday</a></li>
+          <li><a href="#" class="hover:underline">09:00 am – 09:00 pm</a></li>
+          <li>
+            <a href="#" class="hover:underline">Saturday – Sunday – Closed</a>
+          </li>
         </ul>
       </div>
 
       <!-- Column 4 -->
       <div>
-        <h3 class="text-lg font-semibold mb-4 text-[#1B3942]">Contact</h3>
+        <h3 class="text-lg font-semibold mb-4 text-[#1B3942] font-italiana">
+          Quick Links
+        </h3>
         <ul class="space-y-2">
           <li>
-            <a href="tel:+1234567890" class="hover:underline"
-              >+1 (234) 567-890</a
-            >
+            <a href="" class="hover:underline">Contact</a>
           </li>
           <li>
-            <a href="mailto:info@example.com" class="hover:underline"
-              >info@example.com</a
-            >
+            <a href="" class="hover:underline">Property Valuation</a>
           </li>
           <li>
-            <a href="#" class="hover:underline">123 Main St, Los Angeles</a>
+            <a href="" class="hover:underline">Blogs</a>
           </li>
         </ul>
       </div>
@@ -58,12 +71,10 @@
 
     <!-- Bottom bar -->
     <div
-      class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500"
+      class="border-t border-gray-300 mt-10 pt-6 text-center text-sm text-gray-500"
     >
-      © 2025 California Residence · Website by <a
-        href="https://youragency.com"
-        class="hover:underline">Your Agency</a
-      >
+      © {currentYear} California Residence · Website by
+      <a href="https://youragency.com" class="hover:underline">EasyListings</a>
     </div>
   </div>
 </footer>
