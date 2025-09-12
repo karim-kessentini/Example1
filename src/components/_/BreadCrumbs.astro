@@ -1,0 +1,30 @@
+---
+// Breadcrumbs.astro
+interface Props {
+  paths: string[];
+}
+
+const { paths } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="text-sm px-4 bg-gray-100">
+  <ol class="flex items-center">
+    {paths.map((path, index) => (
+      <li class="flex items-center" key={index}>
+        <span
+          class={`${
+            index === paths.length - 1
+              ? "text-[#94792f]" // gold for last
+              : "text-gray-700"
+          } hover:text-[#94792f]`}
+        >
+          <a href={path.path}>{path.name}</a>
+        </span>
+
+        {index < paths.length - 1 && (
+          <span class="mx-2 text-gray-700">&gt;</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

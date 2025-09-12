@@ -1,0 +1,14 @@
+---
+import ContactHero from "../components/sections/ContactHero.astro";
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/_/BreadCrumbs.astro";
+import ContactCard from "../components/cards/ContactCard.astro";
+---
+
+<Layout title="California Residence">
+    <main class="flex flex-col overflow-hidden">
+        <ContactHero />
+        <Breadcrumbs paths={[{name: "Home", path:"/"}, {name: "Contact", path: "/contact"}]} />
+        <ContactCard />
+    </main>
+</Layout>

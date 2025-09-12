@@ -1,0 +1,28 @@
+---
+export interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<section
+  class={`relative min-h-[500px] bg-cover bg-center flex justify-center items-start pt-24 text-center bg-gradient-to-r from-[#1b3942] to-[#152c33] ${className || ""}`}
+>
+  <div
+    class="absolute inset-0 rounded-b-[50px] flex flex-col justify-center items-center gap-10 px-5"
+  >
+    <div>
+      <h1
+        class="relative text-white text-4xl md:text-7xl font-roboto drop-shadow-lg font-bold !leading-[1.2] block"
+      >
+        How to contact us
+      </h1>
+      <h2
+        class="relative text-white text-4xl md:text-[22px] font-roboto drop-shadow-lg !leading-[1.2] block mt-5"
+      >
+        Call or send an email through our form
+      </h2>
+    </div>
+  </div>
+</section>
