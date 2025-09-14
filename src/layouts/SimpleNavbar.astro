@@ -28,8 +28,7 @@ const navItems = [
 
 <!-- Navbar -->
 <nav
-  id="navbar"
-  class="navbar fixed top-0 left-0 right-0 z-50 bg-black lg:bg-transparent h-[90px] lg:opacity-95"
+  class="navbar sticky top-0 left-0 right-0 z-50 lg:bg-white lg:shadow-md bg-black h-[90px] lg:opacity-95"
 >
   <div
     class="max-w-5xl lg:max-w-6xl xl:max-w-7xl flex items-center justify-between h-full mx-5"
@@ -38,7 +37,10 @@ const navItems = [
     <div class="hidden lg:flex space-x-6 font-medium">
       {
         navItems.map((item) => (
-          <a href={item.href} class="navlink text-white hover:text-[#94762f]">
+          <a
+            href={item.href}
+            class="navlink text-[#1b3942] hover:text-[#94762f]"
+          >
             {item.text}
           </a>
         ))
@@ -72,15 +74,16 @@ const navItems = [
 
     <!-- Right: Call to Actions -->
     <div class="hidden lg:flex space-x-4 font-medium">
-      <a href="/contact" class="navlink text-white hover:text-[#94762f]"
+      <a href="/contact" class="navlink text-[#1b3942] hover:text-[#94762f]"
         >Contact</a
       >
-      <a href="/home-valuation" class="navlink text-white hover:text-[#94762f]"
-        >Home valuation</a
+      <a
+        href="/home-valuation"
+        class="navlink text-[#1b3942] hover:text-[#94762f]">Home valuation</a
       >
       <a
         href="tel:+1234567890"
-        class="navlink text-white hover:text-[#94762f] flex items-center space-x-2"
+        class="navlink text-[#1b3942] hover:text-[#94762f] flex items-center space-x-2"
       >
         <Icon name="phone" size={20} />
         <span>+1 206-741-0340</span>
@@ -109,36 +112,3 @@ const navItems = [
     }
   </div>
 </nav>
-
-<script>
-  // Scroll effect
-  const navbar = document.getElementById("navbar");
-  window.addEventListener("scroll", () => {
-    if (!navbar) return;
-    const navlinks = document.querySelectorAll(".navlink");
-    if (window.scrollY > 50) {
-      navbar.classList.add("lg:bg-white", "lg:shadow-md");
-      navbar.classList.remove("lg:bg-transparent");
-      navlinks.forEach((link) => {
-        link.classList.add("text-[#1b3942]");
-        link.classList.remove("text-white");
-      });
-    } else {
-      navbar.classList.remove("lg:bg-white", "lg:shadow-md");
-      navbar.classList.add("lg:bg-transparent");
-      navlinks.forEach((link) => {
-        link.classList.remove("text-[#1b3942]");
-        link.classList.add("text-white");
-      });
-    }
-  });
-
-  // Mobile menu toggle
-  const menuToggle = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-  }
-</script>
