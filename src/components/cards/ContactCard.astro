@@ -9,21 +9,31 @@
       Contact Us
     </h2>
 
-    <form class="space-y-6">
+    <form
+      class="space-y-6"
+      method="POST"
+      action="https://formspree.io/f/mkgvaogg"
+      enctype="application/x-www-form-urlencoded"
+    >
       <!-- Row of inputs -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <input
           type="text"
+          name="name"
           placeholder="Your Name"
+          required
           class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400"
         />
         <input
           type="email"
+          name="email"
           placeholder="Your Email"
+          required
           class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400"
         />
         <input
           type="tel"
+          name="phone"
           placeholder="Your Phone"
           class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400"
         />
@@ -31,8 +41,10 @@
 
       <!-- Textarea -->
       <textarea
+        name="message"
         rows="4"
         placeholder="Your Message"
+        required
         class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400"
       ></textarea>
 
@@ -44,9 +56,7 @@
         <span
           class="absolute left-0 top-0 h-full w-0 bg-white transition-all duration-300 group-hover:w-full"
         ></span>
-        <span
-          class="relative z-10 group-hover:text-[#C5A249]"
-        >
+        <span class="relative z-10 group-hover:text-[#C5A249]">
           Send Email
         </span>
       </button>
