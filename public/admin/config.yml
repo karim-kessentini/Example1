@@ -1,0 +1,77 @@
+local_backend: true
+backend:
+  name: github
+  repo: https://github.com/karim-kessentini/Example1
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "properties"
+    label: "Properties"
+    folder: "src/content/properties"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options:
+          - "For Sale"
+          - "For Rent"
+      - { label: "Sold", name: "sold", widget: "boolean" }
+      - { label: "Price", name: "price", widget: "number" }
+      - {
+          label: "Bedrooms",
+          name: "bedrooms",
+          widget: "number",
+          required: false,
+        }
+      - {
+          label: "Bathrooms",
+          name: "bathrooms",
+          widget: "number",
+          required: false,
+        }
+      - { label: "Size (sqm)", name: "size", widget: "number", required: false }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options: ["Apartment", "House", "Condo", "Land"]
+        }
+      - { label: "Address", name: "address", widget: "string", required: false }
+      - { label: "Latitude", name: "lat", widget: "number", required: false }
+      - { label: "Longitude", name: "lng", widget: "number", required: false }
+      - label: "Photos"
+        name: "photos"
+        widget: "list"
+        field:
+          label: "Image"
+          name: "image"
+          widget: "image"
+
+  - name: "blog"
+    label: "Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Publish Date",
+          name: "publishDate",
+          widget: "datetime",
+          required: false,
+        }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }
