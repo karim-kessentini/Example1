@@ -1,5 +1,40 @@
 ---
 import PropertyGrid from "../blocks/PropertyGrid";
+import type { Property } from "../blocks/PropertyGrid";
+import { getCollection } from "astro:content";
+
+const entries = await getCollection("properties");
+
+const propertiesFromContent = entries.map((entry) => {
+    const d = entry.data as any;
+
+    // Normalize photos: string -> { src } and support frontmatter that uses `image`
+    const photos = (d.photos ?? []).map((p: any) =>
+        typeof p === "string"
+            ? { src: p }
+            : p?.image
+              ? { src: p.image }
+              : p?.src
+                ? { src: p.src }
+                : p,
+    );
+
+    return {
+        id: String(entry.slug),
+        name: d.name ?? d.title ?? "",
+        sold: Boolean(d.sold), // ensure boolean
+        price: d.price ?? "",
+        category: d.category,
+        status: d.status,
+        description: d.description,
+        photos,
+        bedrooms: d.bedrooms,
+        bathrooms: d.bathrooms,
+        size: d.size,
+        // include any additional fields you rely on
+    };
+}) as Property[];
 ---
 
-<PropertyGrid client:load />
+<PropertyGrid initialProperties={propertiesFromContent} client:load />
+<!-- <PropertyGrid client:load /> -->
