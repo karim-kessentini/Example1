@@ -39,6 +39,7 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(),
     publishDate: z.date(), // Decap "datetime" → Astro z.date()
+    cover: z.string(), // image path
     tags: z.array(z.string()).optional(), // list of strings
     body: z.string(), // markdown body content
   }),
