@@ -38,10 +38,9 @@ const properties = defineCollection({
 const blog = defineCollection({
   schema: z.object({
     title: z.string(),
-    description: z.string().optional(),
-    tags: z.array(z.string()).optional(),
-    publishDate: z.string().optional(),
-    draft: z.boolean().default(false),
+    publishDate: z.date(), // Decap "datetime" → Astro z.date()
+    tags: z.array(z.string()).optional(), // list of strings
+    body: z.string(), // markdown body content
   }),
 });
 

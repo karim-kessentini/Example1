@@ -71,17 +71,10 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - {
-          label: "Description",
-          name: "description",
-          widget: "string",
-          required: false,
-        }
-      - {
           label: "Publish Date",
           name: "publishDate",
           widget: "datetime",
-          required: false,
+          required: true,
         }
       - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Draft", name: "draft", widget: "boolean", default: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown", required: true }
