@@ -1,116 +1,50 @@
-<section id="blogs" class="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
+---
+import BlogCard from "../cards/BlogCard.astro";
+---
+
+<section id="blog" class="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
     <div class="text-center">
         <h2
-            class="text-3xl font-bold tracking-tight font-italiana text-[#102227] dark:text-[#ffffff] sm:text-4xl"
+            class="text-3xl font-bold tracking-tight font-italiana text-[#102227] sm:text-4xl"
         >
             From Our Blog
         </h2>
-        <p
-            class="mt-4 text-lg leading-8 text-[#102227]/80 dark:text-[#ffffff]/80"
-        >
+        <p class="mt-4 text-lg leading-8 text-[#102227]/80">
             Stay updated with the latest trends and insights in the real estate
             market.
         </p>
     </div>
-    <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
-            <div class="flex-shrink-0">
-                <img
-                    alt="Interior of a modern house"
-                    class="h-48 w-full object-cover"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXb5TJKAWYy3UFgmIVIy9P4nZiXKGu3zmDyFurVD-5fWP9XUIWmTBbByG1OD7klw8_9BeZnevNN-iOQKd3Du96ZTEM7x8lSrGhm9BdGbqlVCgfaQcOQquiYiV_cbF64D2DFlaCNd1wqmlqanw7Ja0omaHJ83vMC8zmkUmjEVb7SSq6-Ut_szVubkCMKIJKCt10wxo8M2BvlFxd0qtdLmFMQ8KSMlI2Y_2AlfV9ONFGuEq-I2CFm66gWuDTbaBGUjaGJiQDANATdjg"
-                />
-            </div>
-            <div
-                class="flex flex-1 flex-col justify-between bg-[#ffffff] dark:bg-[#102227] p-6"
-            >
-                <div class="flex-1">
-                    <p class="text-sm font-medium text-[#94792f]">
-                        <a class="hover:underline" href="#">Buying</a>
-                    </p>
-                    <a class="mt-2 block" href="#">
-                        <p
-                            class="text-xl font-semibold text-[#102227] dark:text-[#ffffff]"
-                        >
-                            The Ultimate Guide to Buying Your First Home
-                        </p>
-                        <p
-                            class="mt-3 text-base text-[#102227]/80 dark:text-[#ffffff]/80"
-                        >
-                            Everything you need to know about purchasing your
-                            first property, from budgeting to closing.
-                        </p>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
-            <div class="flex-shrink-0">
-                <img
-                    alt="A 'For Sale' sign in front of a house"
-                    class="h-48 w-full object-cover"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmEFyBOH7E81ghZ5si5s5ULloTuGGiU5602Bsg8nHnsEoOVseCYzB3zQllkcLRd22MnCUDegrn24i2Vu7PBB5bUngT5dd1NEx5KNGC63pCtk0jpk_BUwLDOnQpJ-VSNnNyohC-_FgHmH223FsQIuo5_FineZIcU4T-qR-Wv3U8e27lAk4wupzaAtwLQUPvJ7KiMe-5YcnyPLf1LTE2_pNHFVJUz3be30nEGfsl_yK19i9pgYmFfwbDWkzFDH5pMuCZiXtwM3HFhf0"
-                />
-            </div>
-            <div
-                class="flex flex-1 flex-col justify-between bg-[#ffffff] dark:bg-[#102227] p-6"
-            >
-                <div class="flex-1">
-                    <p class="text-sm font-medium text-[#94792f]">
-                        <a class="hover:underline" href="#">Selling</a>
-                    </p>
-                    <a class="mt-2 block" href="#">
-                        <p
-                            class="text-xl font-semibold text-[#102227] dark:text-[#ffffff]"
-                        >
-                            Navigating the Real Estate Market: Tips for Sellers
-                        </p>
-                        <p
-                            class="mt-3 text-base text-[#102227]/80 dark:text-[#ffffff]/80"
-                        >
-                            Maximize your property's value and ensure a smooth
-                            selling process with our expert advice.
-                        </p>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
-            <div class="flex-shrink-0">
-                <img
-                    alt="Keys to a new house"
-                    class="h-48 w-full object-cover"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5ejMRIkSfVg097aV3vyRUuiQoEjxNbD3fDh3VqB9g9l9ImR6aG4H2YEhAV4Oi8E_ADZ2c8a_jxy4RY3BbKr_8PL8s1HBfrpkzsaXftd1FJpJo2-tajQ6DkauvXsC1xv2icMTDKbu1Yu04azBYTCNeNXsRuVg4PVJRmz7xIwp8LBN0Gk6sJZCYG4TTwKplSp118-V1xBNHuryi4se-6AkQoem1-axFas1xzk1z3CoG7K4U7grLJEp4Vt1XbGYNU9eVJRAdwo1g-sc"
-                />
-            </div>
-            <div
-                class="flex flex-1 flex-col justify-between bg-[#ffffff] dark:bg-[#102227] p-6"
-            >
-                <div class="flex-1">
-                    <p class="text-sm font-medium text-[#94792f]">
-                        <a class="hover:underline" href="#">Investing</a>
-                    </p>
-                    <a class="mt-2 block" href="#">
-                        <p
-                            class="text-xl font-semibold text-[#102227] dark:text-[#ffffff]"
-                        >
-                            Investing in Property: A Beginner's Handbook
-                        </p>
-                        <p
-                            class="mt-3 text-base text-[#102227]/80 dark:text-[#ffffff]/80"
-                        >
-                            Learn the basics of real estate investment and start
-                            building your portfolio today.
-                        </p>
-                    </a>
-                </div>
-            </div>
-        </div>
+
+    <div
+        class="mt-12 grid gap-8 grid-cols-[repeat(auto-fit,minmax(260px,1fr))]"
+    >
+        <BlogCard
+            title="The Ultimate Guide to Buying Your First Home"
+            photo="https://lh3.googleusercontent.com/aida-public/AB6AXuCXb5TJKAWYy3UFgmIVIy9P4nZiXKGu3zmDyFurVD-5fWP9XUIWmTBbByG1OD7klw8_9BeZnevNN-iOQKd3Du96ZTEM7x8lSrGhm9BdGbqlVCgfaQcOQquiYiV_cbF64D2DFlaCNd1wqmlqanw7Ja0omaHJ83vMC8zmkUmjEVb7SSq6-Ut_szVubkCMKIJKCt10wxo8M2BvlFxd0qtdLmFMQ8KSMlI2Y_2AlfV9ONFGuEq-I2CFm66gWuDTbaBGUjaGJiQDANATdjg"
+            tags={["Buying"]}
+            content="Everything you need to know about purchasing your first property, from budgeting to closing."
+            href="/blog/blog-detail"
+        />
+        <BlogCard
+            title="Navigating the Real Estate Market: Tips for Sellers"
+            photo="https://lh3.googleusercontent.com/aida-public/AB6AXuBmEFyBOH7E81ghZ5si5s5ULloTuGGiU5602Bsg8nHnsEoOVseCYzB3zQllkcLRd22MnCUDegrn24i2Vu7PBB5bUngT5dd1NEx5KNGC63pCtk0jpk_BUwLDOnQpJ-VSNnNyohC-_FgHmH223FsQIuo5_FineZIcU4T-qR-Wv3U8e27lAk4wupzaAtwLQUPvJ7KiMe-5YcnyPLf1LTE2_pNHFVJUz3be30nEGfsl_yK19i9pgYmFfwbDWkzFDH5pMuCZiXtwM3HFhf0"
+            tags={["Selling, Tips"]}
+            content="Maximize your property's value and ensure a smooth selling process with our expert advice."
+            href="/blog/blog-detail"
+        />
+
+        <BlogCard
+            title="Investing in Property: A Beginner's Handbook"
+            photo="https://lh3.googleusercontent.com/aida-public/AB6AXuC5ejMRIkSfVg097aV3vyRUuiQoEjxNbD3fDh3VqB9g9l9ImR6aG4H2YEhAV4Oi8E_ADZ2c8a_jxy4RY3BbKr_8PL8s1HBfrpkzsaXftd1FJpJo2-tajQ6DkauvXsC1xv2icMTDKbu1Yu04azBYTCNeNXsRuVg4PVJRmz7xIwp8LBN0Gk6sJZCYG4TTwKplSp118-V1xBNHuryi4se-6AkQoem1-axFas1xzk1z3CoG7K4U7grLJEp4Vt1XbGYNU9eVJRAdwo1g-sc"
+            tags={["Investing"]}
+            content="Learn the basics of real estate investment and start building your portfolio today."
+            href="/blog/blog-detail"
+        />
     </div>
     <div class="mt-12 text-center">
         <a
-            class="inline-block rounded-lg bg-[#94792f] px-8 py-3 text-base font-semibold text-white shadow-md hover:bg-[#94792f]/90 focus:outline-none focus:ring-2 focus:ring-[#94792f] focus:ring-offset-2 focus:ring-offset-[#ffffff] dark:focus:ring-offset-[#102227]"
-            href="#"
+            class="inline-block rounded-lg bg-[#94792f] px-8 py-3 text-base font-semibold text-white shadow-md hover:bg-[#94792f]/90 focus:outline-none focus:ring-2 focus:ring-[#94792f] focus:ring-offset-2 focus:ring-offset-[#ffffff]"
+            href="/blog"
         >
             Browse All Posts
         </a>
