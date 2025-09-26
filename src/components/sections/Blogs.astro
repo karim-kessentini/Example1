@@ -1,5 +1,54 @@
 ---
 import BlogCard from "../cards/BlogCard.astro";
+import { getCollection } from "astro:content";
+
+const entries = await getCollection("blog");
+
+// sort by publishDate (newest first) and take latest 3
+const sorted = entries.slice().sort((a, b) => {
+    const aDate = a.data?.publishDate
+        ? new Date(a.data.publishDate).getTime()
+        : 0;
+    const bDate = b.data?.publishDate
+        ? new Date(b.data.publishDate).getTime()
+        : 0;
+    return bDate - aDate;
+});
+const latestEntries = sorted.slice(0, 3);
+
+const blogsFromContent = latestEntries.map((entry) => {
+    const d = entry.data as any;
+
+    const photo = typeof d.cover === "string" ? d.cover : d.cover?.src ?? "";
+    const tags = Array.isArray(d.tags) ? d.tags : d.tags ? [d.tags] : [];
+
+    const content =
+        typeof d.body === "string"
+            ? d.body
+            : typeof entry.body === "string"
+              ? entry.body
+              : "";
+
+    return {
+        id: String(entry.slug),
+        title: d.title ?? "",
+        photo,
+        tags,
+        content,
+        href: `/blog/${entry.slug}`,
+        publishDate: d.publishDate ?? null,
+    };
+});
+
+// layout helpers to keep 1 or 2 cards centered + limited width
+const count = blogsFromContent.length;
+const wrapperMaxClass =
+    count === 1 ? "max-w-xl" : count === 2 ? "max-w-3xl" : "max-w-full";
+const gridColsClass =
+    count >= 3
+        ? "grid-cols-[repeat(auto-fit,minmax(260px,1fr))]"
+        : `grid-cols-[repeat(${Math.max(1, count)},minmax(260px,360px))]`;
+const justifyClass = count < 3 ? "justify-center" : "";
 ---
 
 <section id="blog" class="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
@@ -15,32 +64,22 @@ import BlogCard from "../cards/BlogCard.astro";
         </p>
     </div>
 
-    <div
-        class="mt-12 grid gap-8 grid-cols-[repeat(auto-fit,minmax(260px,1fr))]"
-    >
-        <BlogCard
-            title="The Ultimate Guide to Buying Your First Home"
-            photo="https://lh3.googleusercontent.com/aida-public/AB6AXuCXb5TJKAWYy3UFgmIVIy9P4nZiXKGu3zmDyFurVD-5fWP9XUIWmTBbByG1OD7klw8_9BeZnevNN-iOQKd3Du96ZTEM7x8lSrGhm9BdGbqlVCgfaQcOQquiYiV_cbF64D2DFlaCNd1wqmlqanw7Ja0omaHJ83vMC8zmkUmjEVb7SSq6-Ut_szVubkCMKIJKCt10wxo8M2BvlFxd0qtdLmFMQ8KSMlI2Y_2AlfV9ONFGuEq-I2CFm66gWuDTbaBGUjaGJiQDANATdjg"
-            tags={["Buying"]}
-            content="Everything you need to know about purchasing your first property, from budgeting to closing."
-            href="/blog/blog-detail"
-        />
-        <BlogCard
-            title="Navigating the Real Estate Market: Tips for Sellers"
-            photo="https://lh3.googleusercontent.com/aida-public/AB6AXuBmEFyBOH7E81ghZ5si5s5ULloTuGGiU5602Bsg8nHnsEoOVseCYzB3zQllkcLRd22MnCUDegrn24i2Vu7PBB5bUngT5dd1NEx5KNGC63pCtk0jpk_BUwLDOnQpJ-VSNnNyohC-_FgHmH223FsQIuo5_FineZIcU4T-qR-Wv3U8e27lAk4wupzaAtwLQUPvJ7KiMe-5YcnyPLf1LTE2_pNHFVJUz3be30nEGfsl_yK19i9pgYmFfwbDWkzFDH5pMuCZiXtwM3HFhf0"
-            tags={["Selling, Tips"]}
-            content="Maximize your property's value and ensure a smooth selling process with our expert advice."
-            href="/blog/blog-detail"
-        />
-
-        <BlogCard
-            title="Investing in Property: A Beginner's Handbook"
-            photo="https://lh3.googleusercontent.com/aida-public/AB6AXuC5ejMRIkSfVg097aV3vyRUuiQoEjxNbD3fDh3VqB9g9l9ImR6aG4H2YEhAV4Oi8E_ADZ2c8a_jxy4RY3BbKr_8PL8s1HBfrpkzsaXftd1FJpJo2-tajQ6DkauvXsC1xv2icMTDKbu1Yu04azBYTCNeNXsRuVg4PVJRmz7xIwp8LBN0Gk6sJZCYG4TTwKplSp118-V1xBNHuryi4se-6AkQoem1-axFas1xzk1z3CoG7K4U7grLJEp4Vt1XbGYNU9eVJRAdwo1g-sc"
-            tags={["Investing"]}
-            content="Learn the basics of real estate investment and start building your portfolio today."
-            href="/blog/blog-detail"
-        />
+    <div class={`mt-12 ${wrapperMaxClass} mx-auto`}>
+        <div class={`grid gap-8 ${gridColsClass} ${justifyClass}`}>
+            {
+                blogsFromContent.map((blog) => (
+                    <BlogCard
+                        title={blog.title}
+                        photo={blog.photo}
+                        tags={blog.tags}
+                        content={blog.content}
+                        href={blog.href}
+                    />
+                ))
+            }
+        </div>
     </div>
+
     <div class="mt-12 text-center">
         <a
             class="inline-block rounded-lg bg-[#94792f] px-8 py-3 text-base font-semibold text-white shadow-md hover:bg-[#94792f]/90 focus:outline-none focus:ring-2 focus:ring-[#94792f] focus:ring-offset-2 focus:ring-offset-[#ffffff]"

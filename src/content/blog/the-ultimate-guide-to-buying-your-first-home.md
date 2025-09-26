@@ -6,7 +6,6 @@ tags:
   - real estate
   - buying
 ---
-
 **Buying your first home can feel overwhelming — but it doesn’t have to.** 🏡
 
 In this guide, we’ll break down everything you need to know as a first-time buyer, from saving for a down payment to closing on your dream property.
