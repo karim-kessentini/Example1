@@ -20,7 +20,11 @@ const words = (content || "").split(/\s+/).filter(Boolean);
 const excerpt = words.slice(0, 20).join(" ") + (words.length > 20 ? "..." : "");
 ---
 
-<a href={href} class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+<a
+    href={href}
+    target="_blank"
+    class="flex flex-col overflow-hidden rounded-lg shadow-lg"
+>
     <div class="flex-shrink-0">
         <img alt={title} class="h-48 w-full object-cover" src={photo} />
     </div>
