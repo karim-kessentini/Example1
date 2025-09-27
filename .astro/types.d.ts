@@ -126,6 +126,20 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"investing-in-property-a-beginners-handbook.md": {
+	id: "investing-in-property-a-beginners-handbook.md";
+  slug: "investing-in-property-a-beginners-handbook";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"navigating-the-real-estate-market-tips-for-sellers.md": {
+	id: "navigating-the-real-estate-market-tips-for-sellers.md";
+  slug: "navigating-the-real-estate-market-tips-for-sellers";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "the-ultimate-guide-to-buying-your-first-home.md": {
 	id: "the-ultimate-guide-to-buying-your-first-home.md";
   slug: "the-ultimate-guide-to-buying-your-first-home";
