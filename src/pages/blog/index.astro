@@ -1,186 +1,56 @@
 ---
-import { Icon } from "astro-icon/components";
+import BlogList from "../../components/blocks/BlogList";
 import Footer from "../../layouts/Footer.astro";
 import SimpleNavbar from "../../layouts/SimpleNavbar.astro";
-import BlogCard from "../../components/cards/BlogCard.astro";
 import { getCollection } from "astro:content";
 
 const entries = await getCollection("blog");
+const posts = entries.map((entry) => {
+    const d = entry.data as any;
+    const photo = typeof d.cover === "string" ? d.cover : d.cover?.src ?? "";
+    const tags = Array.isArray(d.tags) ? d.tags : d.tags ? [d.tags] : [];
+    const content =
+        typeof d.body === "string"
+            ? d.body
+            : typeof entry.body === "string"
+              ? entry.body
+              : entry.body
+                ? String(entry.body)
+                : "";
 
-// sort by publishDate (newest first)
-const posts = entries
-    .slice()
-    .sort((a, b) => {
-        const aTime = a.data?.publishDate
-            ? new Date(a.data.publishDate).getTime()
-            : 0;
-        const bTime = b.data?.publishDate
-            ? new Date(b.data.publishDate).getTime()
-            : 0;
-        return bTime - aTime;
-    })
-    .map((entry) => {
-        const d = entry.data as any;
-        const photo =
-            typeof d.cover === "string" ? d.cover : d.cover?.src ?? "";
-        const tags = Array.isArray(d.tags) ? d.tags : d.tags ? [d.tags] : [];
-        const content =
-            typeof d.body === "string"
-                ? d.body
-                : typeof entry.body === "string"
-                  ? entry.body
-                  : entry.body
-                    ? String(entry.body)
-                    : "";
-
-        return {
-            id: String(entry.slug),
-            title: d.title ?? "Untitled",
-            photo,
-            tags,
-            content,
-            href: `/blog/${entry.slug}`,
-            publishDate: d.publishDate ?? null,
-        };
-    });
-
-// pagination config
-const POSTS_PER_PAGE = 6;
-const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
-const currentPage = 1;
-const start = (currentPage - 1) * POSTS_PER_PAGE;
-const end = start + POSTS_PER_PAGE;
-const pagePosts = posts.slice(start, end);
+    return {
+        id: String(entry.slug),
+        title: d.title ?? "Untitled",
+        photo,
+        tags,
+        content,
+        href: `/blog/${entry.slug}`,
+        publishDate: d.publishDate ?? null,
+    };
+});
 ---
 
-<html lang="en" class="scroll-smooth">
+<html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
+        <meta charset="UTF-8" />
         <title>California Residence - Blog</title>
-        <link rel="stylesheet" href="/style/custom.css" />
     </head>
-    <body class="overflow-hidden overflow-y-auto bg-body">
+    <body>
         <SimpleNavbar />
-        <main
-            class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20"
-        >
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <p class="text-[#94792F] font-semibold mb-2">Our Blog</p>
-                    <h2
-                        class="text-4xl md:text-5xl font-italiana font-extrabold tracking-tight text-[#1b3942]"
-                    >
-                        Insights &amp; Inspiration
-                    </h2>
-                    <p class="mt-4 text-lg text-[#102227]/70 max-w-2xl mx-auto">
-                        Explore our latest articles and updates on the real
-                        estate market, home design, and community living.
-                    </p>
-                </div>
-
-                <div class="mb-12">
-                    <div class="relative">
-                        <span
-                            class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#102227]/50"
-                        >
-                            <Icon name="search" size={22} />
-                        </span>
-                        <input
-                            class="w-full h-14 pl-12 pr-4 rounded-full bg-white border border-[#94792F]/20 focus:ring-2 focus:ring-[#94792F] focus:border-[#94792F] outline-none transition-shadow"
-                            placeholder="Search blog posts..."
-                            type="text"
-                        />
-                    </div>
-                </div>
-
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+            <div class="text-center mb-12">
+                <p class="text-[#94792F] font-semibold mb-2">Our Blog</p>
+                <h2
+                    class="text-4xl md:text-5xl font-italiana font-extrabold tracking-tight text-[#1b3942]"
                 >
-                    {
-                        pagePosts.length === 0 ? (
-                            <div class="col-span-full text-center text-gray-600">
-                                No posts found.
-                            </div>
-                        ) : (
-                            pagePosts.map((post) => (
-                                <BlogCard
-                                    title={post.title}
-                                    photo={post.photo}
-                                    tags={post.tags}
-                                    content={post.content}
-                                    href={post.href}
-                                />
-                            ))
-                        )
-                    }
-                </div>
-
-                <div class="mt-16 flex justify-center items-center gap-2">
-                    <!-- Prev -->
-                    {
-                        currentPage > 1 ? (
-                            <a
-                                class="flex size-10 items-center justify-center rounded-full hover:bg-[#94792F]/10 transition-colors"
-                                href={
-                                    currentPage - 1 === 1
-                                        ? "/blog"
-                                        : `/blog/page/${currentPage - 1}`
-                                }
-                            >
-                                <span class="material-symbols-outlined">
-                                    <Icon name="chevron-left" size={16} />
-                                </span>
-                            </a>
-                        ) : (
-                            <span class="flex size-10 items-center justify-center rounded-full text-gray-300">
-                                <Icon name="chevron-left" size={16} />
-                            </span>
-                        )
-                    }
-
-                    <!-- page numbers -->
-                    {
-                        Array.from({ length: totalPages }).map((_, i) => {
-                            const p = i + 1;
-                            const isActive = p === currentPage;
-                            const href = p === 1 ? "/blog" : `/blog/page/${p}`;
-                            return isActive ? (
-                                <span class="flex size-10 items-center justify-center rounded-full bg-[#94792F] text-white font-bold text-sm px-3 py-2">
-                                    {p}
-                                </span>
-                            ) : (
-                                <a
-                                    class="flex size-10 items-center justify-center rounded-full hover:bg-[#94792F]/10 transition-colors font-medium text-sm px-3 py-2"
-                                    href={href}
-                                >
-                                    {p}
-                                </a>
-                            );
-                        })
-                    }
-
-                    <!-- Next -->
-                    {
-                        currentPage < totalPages ? (
-                            <a
-                                class="flex size-10 items-center justify-center rounded-full hover:bg-[#94792F]/10 transition-colors"
-                                href={`/blog/page/${currentPage + 1}`}
-                            >
-                                <span class="material-symbols-outlined">
-                                    <Icon name="chevron-right" size={16} />
-                                </span>
-                            </a>
-                        ) : (
-                            <span class="flex size-10 items-center justify-center rounded-full text-gray-300">
-                                <Icon name="chevron-right" size={16} />
-                            </span>
-                        )
-                    }
-                </div>
+                    Insights &amp; Inspiration
+                </h2>
+                <p class="mt-4 text-lg text-[#102227]/70 max-w-2xl mx-auto">
+                    Explore our latest articles and updates on the real estate
+                    market, home design, and community living.
+                </p>
             </div>
+            <BlogList client:load posts={posts} />
         </main>
         <Footer />
     </body>
