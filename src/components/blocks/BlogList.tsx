@@ -1,3 +1,4 @@
+// src/components/BlogList.tsx
 import React, { useState, useMemo } from "react";
 import { BlogCard } from "../cards/BlogCard";
 
@@ -20,13 +21,17 @@ const BlogList: React.FC<BlogListProps> = ({ posts, postsPerPage = 6 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [query, setQuery] = useState("");
 
+  // Filter posts based on keywords in title, content, or tags
   const filteredPosts = useMemo(() => {
     if (!query) return posts;
-    return posts.filter(
-      (p) =>
-        p.title.toLowerCase().includes(query.toLowerCase()) ||
-        p.content.toLowerCase().includes(query.toLowerCase())
-    );
+
+    const keywords = query.toLowerCase().split(" ").filter(Boolean);
+
+    return posts.filter((p) => {
+      const text = `${p.title} ${p.content} ${p.tags.join(" ")}`.toLowerCase();
+      // Return true if all keywords are present
+      return keywords.every((kw) => text.includes(kw));
+    });
   }, [query, posts]);
 
   const totalPages = Math.max(
@@ -45,12 +50,20 @@ const BlogList: React.FC<BlogListProps> = ({ posts, postsPerPage = 6 }) => {
       {/* search */}
       <div className="mb-12 relative">
         <span className="cursor-pointer absolute left-4 top-1/2 -translate-y-1/2 text-[#102227]/50">
-          {/* <Icon name="search" size={22} /> */}
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-	          <g fill="none" stroke="currentColor" stroke-width="1">
-		          <circle cx="11" cy="11" r="5.5" />
-		          <path stroke-linecap="round" stroke-linejoin="round" d="m15 15l4 4" />
-	          </g>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <g fill="none" stroke="currentColor" strokeWidth="1">
+              <circle cx="11" cy="11" r="5.5" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m15 15l4 4"
+              />
+            </g>
           </svg>
         </span>
         <input
@@ -93,9 +106,20 @@ const BlogList: React.FC<BlogListProps> = ({ posts, postsPerPage = 6 }) => {
           disabled={currentPage === 1}
           className="flex size-10 items-center justify-center rounded-full hover:bg-[#94792F]/10 transition-colors disabled:text-gray-300 disabled:hover:bg-transparent"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-	<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m14.5 17.5l-4.859-4.859a.2.2 0 0 1 0-.282L14.5 7.5" />
-</svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeWidth="2"
+              d="m14.5 17.5l-4.859-4.859a.2.2 0 0 1 0-.282L14.5 7.5"
+            />
+          </svg>
         </button>
 
         {/* Page numbers */}
@@ -122,10 +146,20 @@ const BlogList: React.FC<BlogListProps> = ({ posts, postsPerPage = 6 }) => {
           disabled={currentPage === totalPages}
           className="flex size-10 items-center justify-center rounded-full hover:bg-[#94792F]/10 transition-colors disabled:text-gray-300 disabled:hover:bg-transparent"
         >
-          {/* <Icon name="chevron-right" size={16} /> */}
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-	<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m9.583 17.5l4.858-4.859a.2.2 0 0 0 0-.282L9.583 7.5" />
-</svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeWidth="2"
+              d="m9.583 17.5l4.858-4.859a.2.2 0 0 0 0-.282L9.583 7.5"
+            />
+          </svg>
         </button>
       </div>
     </div>
