@@ -22,7 +22,7 @@ export const BlogCard: React.FC<Props> = ({ title, photo, tags, content, href })
         {tags.map((tag) => (
           <span
             key={tag}
-            className="text-xs px-2 py-1 bg-[#94792F]/10 text-[#94792F] rounded-full"
+            className="text-xs px-2 py-1 bg-[#94792F]/10 text-[#94792F] rounded-full capitalize"
           >
             {tag}
           </span>
