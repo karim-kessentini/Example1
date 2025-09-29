@@ -1,6 +1,4 @@
-// src/components/BlogList.tsx
 import React, { useState, useMemo } from "react";
-import { Icon } from "astro-icon/components";
 import { BlogCard } from "../cards/BlogCard";
 
 type Post = {
@@ -18,7 +16,7 @@ interface BlogListProps {
   postsPerPage?: number;
 }
 
-export const BlogList: React.FC<BlogListProps> = ({ posts, postsPerPage = 6 }) => {
+const BlogList: React.FC<BlogListProps> = ({ posts, postsPerPage = 6 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [query, setQuery] = useState("");
 
@@ -76,6 +74,7 @@ export const BlogList: React.FC<BlogListProps> = ({ posts, postsPerPage = 6 }) =
         ) : (
           pagePosts.map((post) => (
             <BlogCard
+              key={post.id}
               title={post.title}
               photo={post.photo}
               tags={post.tags}

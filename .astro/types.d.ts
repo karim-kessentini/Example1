@@ -131,21 +131,21 @@ declare module 'astro:content' {
   slug: "investing-in-property-a-beginners-handbook";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "navigating-the-real-estate-market-tips-for-sellers.md": {
 	id: "navigating-the-real-estate-market-tips-for-sellers.md";
   slug: "navigating-the-real-estate-market-tips-for-sellers";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "the-ultimate-guide-to-buying-your-first-home.md": {
 	id: "the-ultimate-guide-to-buying-your-first-home.md";
   slug: "the-ultimate-guide-to-buying-your-first-home";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 };
 "properties": {
@@ -154,147 +154,147 @@ declare module 'astro:content' {
   slug: "1-luxury-villa-for-sale";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "10-student-apartment.md": {
 	id: "10-student-apartment.md";
   slug: "10-student-apartment";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "11-tech-district-condo.md": {
 	id: "11-tech-district-condo.md";
   slug: "11-tech-district-condo";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "12-family-ranch-home.md": {
 	id: "12-family-ranch-home.md";
   slug: "12-family-ranch-home";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "13-hollywood-hills-retreat.md": {
 	id: "13-hollywood-hills-retreat.md";
   slug: "13-hollywood-hills-retreat";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "14-downtown-la-condo.md": {
 	id: "14-downtown-la-condo.md";
   slug: "14-downtown-la-condo";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "15-palm-springs-villa.md": {
 	id: "15-palm-springs-villa.md";
   slug: "15-palm-springs-villa";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "16-oceanfront-apartment.md": {
 	id: "16-oceanfront-apartment.md";
   slug: "16-oceanfront-apartment";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "17-suburban-townhouse.md": {
 	id: "17-suburban-townhouse.md";
   slug: "17-suburban-townhouse";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "18-cozy-bungalow.md": {
 	id: "18-cozy-bungalow.md";
   slug: "18-cozy-bungalow";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "19-penthouse-loft.md": {
 	id: "19-penthouse-loft.md";
   slug: "19-penthouse-loft";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "2-modern-downtown-apartment.md": {
 	id: "2-modern-downtown-apartment.md";
   slug: "2-modern-downtown-apartment";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "20-lake-house.md": {
 	id: "20-lake-house.md";
   slug: "20-lake-house";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "3-cozy-townhouse-near-beach.md": {
 	id: "3-cozy-townhouse-near-beach.md";
   slug: "3-cozy-townhouse-near-beach";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "4-lakeview-condo.md": {
 	id: "4-lakeview-condo.md";
   slug: "4-lakeview-condo";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "5-sunny-studio-apartment.md": {
 	id: "5-sunny-studio-apartment.md";
   slug: "5-sunny-studio-apartment";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "6-downtown-loft.md": {
 	id: "6-downtown-loft.md";
   slug: "6-downtown-loft";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "7-suburban-family-home.md": {
 	id: "7-suburban-family-home.md";
   slug: "7-suburban-family-home";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "8-luxury-hillside-mansion.md": {
 	id: "8-luxury-hillside-mansion.md";
   slug: "8-luxury-hillside-mansion";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "9-seaside-townhouse.md": {
 	id: "9-seaside-townhouse.md";
   slug: "9-seaside-townhouse";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 "NYC Penthouse.md": {
 	id: "NYC Penthouse.md";
   slug: "nyc-penthouse";
   body: string;
   collection: "properties";
-  data: InferEntrySchema<"properties">
+  data: any
 } & { render(): Render[".md"] };
 };
 
@@ -306,5 +306,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("./../src/content/config.js");
+	export type ContentConfig = never;
 }
